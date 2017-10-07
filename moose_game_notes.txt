@@ -1,0 +1,208 @@
+
+
+[9]: for x in enumerate(answer):
+   ...:     if x==" ":
+   ...:         print(" "),
+   ...:     elif x==guess:
+   ...:         print(guess),
+   ...:     else:
+   ...:         print("_ "),
+
+   psudo code
+   # define a counter 
+   i = 0
+
+
+   Failed: 
+   In [29]: for letter in chosen_puzzle:
+    ...:     int(counter) = 0
+    ...:     if letter != ' ':
+    ...:         saved_guesses.insert(counter,"_ ")
+    ...:     else saved_guesses.insert(counter," ")
+    ...:
+    ...:
+    ...:
+    ...:
+  File "<ipython-input-29-a8d6bc45cdf3>", line 5
+    else saved_guesses.insert(counter," ")
+                     ^
+SyntaxError: invalid syntax
+
+Worked: 
+for letter in chosen_puzzle:
+    ...:     counter=0
+    ...:     if letter != ' ':
+    ...:         saved_guesses.insert(counter,"_ "),
+    ...:
+
+    Success: 
+
+for letter in chosen_puzzle:
+   counter=0
+   if letter != ' ':
+       saved_guesses.insert(counter,"_ "),
+   elif letter == ' ':
+       saved_guesses.insert(counter," "),
+
+
+In [43]: print(saved_guesses)
+['_ ', '_ ', '_ ', '_ ', ' ', '_ ', '_ ', '_ ', '_ ', '_ ']
+
+In [44]:
+
+
+***
+
+Attempt 9/24
+
+In [16]: for ctr in range(len(chosen_puzzle)):
+    ...:     for letter in (chosen_puzzle):
+    ...:         if letter == guess:
+    ...:             saved_guesses[ctr] = guess
+    ...:             break
+    ...:         elif letter != guess and ctr != (len(chosen_puzzle)):
+    ...:             continue
+    ...:         else:
+    ...:             break
+    ...:             print("Wrong guess")
+    ...:
+    ...:
+
+    NO - printed all c's
+
+A test
+    In [24]: for ctr in range(len(chosen_puzzle)):
+    ...:     for letter in chosen_puzzle:
+    ...:         print(ctr,letter)
+    ...:
+    ...:
+    ...:
+    ...:
+    ...:
+
+
+0 v
+0 i
+0 d
+0 e
+0 o
+0
+0 c
+0 a
+0 r
+0 d
+1 v
+1 i
+1 d
+1 e
+1 o
+1
+1 c
+1 a
+1 r
+1 d
+2 v
+2 i
+2 d
+2 e
+2 o
+2
+2 c
+2 a
+2 r
+2 d
+3 v
+3 i
+3 d
+3 e
+3 o
+
+In [25]: for ctr in range(len(chosen_puzzle)):
+    ...:     print(ctr,chosen_puzzle[ctr])
+    ...:
+    ...:
+    ...:
+    ...:
+    ...:
+0 v
+1 i
+2 d
+3 e
+4 o
+5
+6 c
+7 a
+8 r
+9 d
+#*NEW* working initilize saved guesses 
+
+for ctr in range(len(chosen_puzzle)):
+   if chosen_puzzle[ctr] != ' ':
+       saved_guesses[ctr] = "_ "
+   elif chosen_puzzle[ctr]  == ' ':
+       saved_guesses[ctr] = " "
+
+# get a guess from user input
+ guess = input('Enter your guess: ')
+
+
+# last check loop 9/24
+# still does not print an error if guess is wrong
+
+In [54]: for ctr in range(len(chosen_puzzle)):
+    ...:     if chosen_puzzle[ctr] == guess:
+    ...:         saved_guesses[ctr] = guess
+    ...:     elif chosen_puzzle[ctr] != guess and ctr != (len(chosen_puzzle)):
+    ...:          continue
+    ...:     elif ctr == (len(chosen_puzzle)):
+    ...:          print("Wrong guess")
+    ...:          break
+
+
+#debugging loop
+In [57]: for ctr in range(len(chosen_puzzle)):
+    ...:     if chosen_puzzle[ctr] == guess:
+    ...:         saved_guesses[ctr] = guess
+    ...:     elif chosen_puzzle[ctr] != guess and ctr != (len(chosen_puzzle)):
+    ...:          print("loop 2 ,",ctr),
+    ...:          continue
+    ...:     elif ctr != (len(chosen_puzzle)):
+    ...:          print("loop 3 ,",ctr),
+    ...:          print("Wrong guess"),
+    ...:          break
+    ...:
+    ...:
+loop 2 , 0
+loop 2 , 1
+loop 2 , 2
+loop 2 , 3
+loop 2 , 4
+loop 2 , 5
+loop 2 , 6
+loop 2 , 7
+loop 2 , 8
+loop 2 , 9
+
+In [65]: for num, letter in enumerate(chosen_puzzle, start=1):
+    ...:     print("Letter {}: {}".format(num, letter))
+    ...:
+    ...:
+Letter 1: v
+Letter 2: i
+Letter 3: d
+Letter 4: e
+Letter 5: o
+Letter 6:
+Letter 7: c
+Letter 8: a
+Letter 9: r
+Letter 10: d
+
+for num, letter in enumerate(chosen_puzzle, start=1):
+    if chosen_puzzle[num] == guess:
+        saved_guesses[num] = guess
+    elif chosen_puzzle[num] != guess and num != (len(chosen_puzzle)):
+         continue
+    elif ctr == (len(chosen_puzzle)):
+         print("Wrong guess")
+         break
