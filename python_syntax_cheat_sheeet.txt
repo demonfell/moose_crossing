@@ -1,0 +1,180 @@
+Python notes Dec 11 2016
+
+Installed ipython and ipython3 
+pip3 install ipython # ipython3 version
+
+python3 notes:
+#run a command from the shell
+import subprocess
+subprocess.call(["ls", "-l"])
+
+#print function in python 3
+#https://docs.python.org/3/whatsnew/3.0.html
+#old
+print "The answer is", 2*2
+#new 
+print("The answer is", 2*2)
+
+# testing opening a file and print in python 3
+for line in open ('/Users/jpemantell/all_bulk_nodes.txt'):
+    ...:     print(line)
+
+### My script to create a dict from a csv file
+new_serv = {}
+with open ('/Users/jpemantell/py_bulk_nodes.csv') as f:
+     	 	for line in f:
+           			(key,val) = line.rstrip().split(',')
+    		 new_serv[(key)] = val
+
+
+
+    
+    
+ 
+Game notes - Dec 27 2016 - python 3 - 
+
+In [1]: answer = 'computer'
+
+In [2]: guess = input('Enter your guess: )
+
+In [9]: for x in enumerate(answer):
+   ...:     if x==" ":
+   ...:         print(" "),
+   ...:     elif x==guess:
+   ...:         print(guess),
+   ...:     else:
+   ...:         print("_ "),
+   ...:
+
+
+# pull in variables from a file 
+# myconfig.py:
+
+var_a = 'home'
+var_b = 'car'
+var_c = 15.5
+
+#Then do
+
+from myconfig import *
+
+Notes from Python training Feb 20 2017
+
+\ is the escape character
+
+String methods:
+
+print(str.lower()) - print your string as lowercase
+print(str.upper()) - " uppercase
+
+Concatenation of strings:
+the + sign
+
+#the replace method
+>>> print(a)
+Dog doo on a plate
+
+>>> print(a.replace('doo','food'))
+Dog food on a plate
+
+
+#substrings
+#Access multiple characters with a substring
+#starting index in inclusive
+#ending index is exclusive
+>>> sub = a[0:6]
+
+>>> print(sub)
+Dog do
+
+#steps - will skip things
+>>> sub = a[0:6:2]
+
+>>> print(sub)
+Dgd
+
+#negative index
+>>> a="This is a string"
+
+>>> a[-1]
+Out[29]: 'g'
+
+#String slicing and indexing
+
+>>> a="This is a string"
+# omit the last index member
+>>> a[:-1]
+'This is a strin'
+#Display all with "step 2"
+>>> a[::2]
+'Ti sasrn'
+# Reverse the string with a negative step
+>>> a[::-1]
+'gnirts a si sihT'
+
+#String formatting
+>>> city = "New York"
+>>> event = "concert"
+#One way to format a string.
+>>> print("Welcome to " + city + " and enjoy the " + event +".")
+Welcome to New York and enjoy the concert.
+#A better way for format a string
+>>> print("Welcome to %s and enjoy the %s." % (city,event))
+Welcome to New York and enjoy the concert.
+#Syntax for one variable
+>>> print("Welcome to %s." % city)
+Welcome to New York.
+
+#lists
+>>> cars = ["bmw", "honda", "audi"]
+>>> print(cars)
+['bmw', 'honda', 'audi']
+>>> empty_list=[]
+>>> print(empty_list)
+[]
+#access list elements
+>>> print(cars[0])
+bmw
+>>> numlist=[1,2,3]
+#Perform operations on the list elements
+>>> sum_num = numlist[0] + numlist[1]
+>>> print(sum_num)
+3
+>>> more_cars=["chevy", "ford", "chrysler"]
+>>> print(more_cars)
+['chevy', 'ford', 'chrysler']
+#Assign a value to a list element
+>>> more_cars[1] = "datsun"
+>>> print(more_cars)
+['chevy', 'datsun', 'chrysler']
+
+#list methods
+
+
+>>> length = len(cars)
+>>> print(length)
+3
+#Append a list member on to the end
+>>> cars.append("hyundai")
+>>> print(cars)
+['bmw', 'honda', 'audi', 'hyundai']
+
+#insert into a specific index number
+>>> cars.insert(1,"saturn")
+>>> print(cars)
+['bmw', 'saturn', 'honda', 'audi', 'hyundai']
+#Find the index number of a list member
+>>> x = cars.index("audi")
+>>> print(x)
+3
+#"pop" off the last member of a list
+>>> print(y)
+hyundai
+>>> print(cars)
+['bmw', 'saturn', 'honda', 'audi']
+>>>
+
+
+
+
+
