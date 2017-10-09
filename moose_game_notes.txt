@@ -206,3 +206,14 @@ for num, letter in enumerate(chosen_puzzle, start=1):
     elif ctr == (len(chosen_puzzle)):
          print("Wrong guess")
          break
+
+
+10/7: 
+# Populated with 2 correct guesses
+In [51]: for num,letter in enumerate(chosen_puzzle):
+    ...:     matched = 0
+    ...:     if letter == my_guess:
+    ...:         saved_guesses[num] = my_guess
+    ...:         matched+=1
+    ...:     elif counter == (len(chosen_puzzle)) and matched == 0:
+    ...:          print("Wrong guess")          
