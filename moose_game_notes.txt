@@ -216,4 +216,78 @@ In [51]: for num,letter in enumerate(chosen_puzzle):
     ...:         saved_guesses[num] = my_guess
     ...:         matched+=1
     ...:     elif counter == (len(chosen_puzzle)) and matched == 0:
-    ...:          print("Wrong guess")          
+    ...:          print("Wrong guess")   
+
+10/8 Gives wrong guess 
+
+In [67]: for num,letter in enumerate(chosen_puzzle, start=1):
+    ...:     matched = 0
+    ...:     print("Letter {}: {}".format(num, letter))
+    ...:     if letter == my_guess:
+    ...:         saved_guesses[num] = my_guess
+    ...:         matched+=1
+    ...:     elif letter != my_guess and num == (len(chosen_puzzle)) and matched == 0:
+    ...:         print("Letter {}: {}".format(num, letter))
+    ...:         print("Wrong guess") 
+    ...:  
+
+
+    10/8 PM 
+    Getting wrong guess, despite have a correct guess. "matched" variable is resetting to 0. 
+
+    In [113]: my_guess = input("Enter your guess: ")
+Enter your guess: a
+
+In [114]: for num,letter in enumerate(chosen_puzzle, start=0):
+     ...:     print("Letter {}: {}".format(num, letter))
+     ...:     matched = 0
+     ...:     if letter == my_guess:
+     ...:         saved_guesses[num] = my_guess
+     ...:         matched+=1
+     ...:         print(matched)
+     ...:     elif letter != my_guess and num == (len(chosen_puzzle)-1) and matched == 0:
+     ...:         print("Wrong guess")
+     ...:         print("You matched" + str(matched) 
+     ...:         )
+     ...:         
+     ...:         
+     ...:         
+Letter 0: v
+Letter 1: i
+Letter 2: d
+Letter 3: e
+Letter 4: o
+Letter 5:  
+Letter 6: c
+Letter 7: a
+1
+Letter 8: r
+Letter 9: d
+Wrong guess
+You matched0
+
+In [115]: print(saved_guesses
+     ...: )
+['v', '_ ', '_ ', '_ ', '_ ', ' ', '_ ', 'a', '_ ', '_ ']   
+
+
+(matched=0 was set inside of the loop)
+
+I will need logic to determine whether the puzzle was finished.
+
+https://www.youtube.com/watch?v=SE4P7IVCunE
+
+an_letters = "aefhilmnorsxAEFILMNORSX"
+word = input ("I will cheer for you! Enter a word: ")
+times = int(input("Enthusiasm level (1-10): "))
+i = 0
+while i < len(word):
+  char = word[i]
+  if char in an_letters:
+    print("Give me a " + char + "! " + char)
+  else: 
+    print("Give me a " + char + "! " + char)
+  i+=1
+print("What does that spell?")
+for i in range(times):
+  print (word, "!!!")

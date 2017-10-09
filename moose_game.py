@@ -2,6 +2,20 @@
 
 #import modules
 import random
+from numpy import array_equal
+
+#Draft of function - 10/9
+
+def check_fin(puz_in_prog,orig_puz):
+    """
+    Checks a puzzle in progress to see if it's finished
+    """
+    if array_equal(''.join(puz_in_prog),orig_puz):
+        print("You have completed the puzzle!")
+        print(puz_in_prog)
+        print(orig_puz)
+  
+
 
 # Define variables
 # For the earliest version, define the word list here
@@ -54,10 +68,9 @@ for num,letter in enumerate(chosen_puzzle, start=1):
 
 
 #debug 10/8
-
+matched = 0
 for num,letter in enumerate(chosen_puzzle, start=0):
     print("Letter {}: {}".format(num, letter))
-    matched = 0
     if letter == my_guess:
         saved_guesses[num] = my_guess
         matched+=1
