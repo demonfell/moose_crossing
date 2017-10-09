@@ -56,13 +56,15 @@ for num,letter in enumerate(chosen_puzzle, start=1):
 #debug 10/8
 
 for num,letter in enumerate(chosen_puzzle, start=0):
-	print("Letter {}: {}".format(num, letter))
+    print("Letter {}: {}".format(num, letter))
     matched = 0
     if letter == my_guess:
         saved_guesses[num] = my_guess
         matched+=1
         print(matched)
-    elif letter != my_guess and num == (len(chosen_puzzle)) and matched == 0:
+    elif letter != my_guess and num == (len(chosen_puzzle)-1) and matched == 0:
         print("Wrong guess")
-        print("You matched" + matched) 
+        print("You matched " + str(matched))
+        
+
 
