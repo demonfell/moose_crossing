@@ -16,11 +16,22 @@ def check_fin(puz_in_prog,orig_puz):
         print(orig_puz)
   
 
+def check_dbl(current_guess,puz_in_prog,bad_guesses):
+    """
+    Checks to see if you already guessed a letter.
+    """
+    if letter in puz_in_prog:
+        print("You already guessed " + letter + "!")
+        return True
+    if letter in bad_guesses:
+        print("You already guessed " + letter + "!") 
+        return True 
 
 # Define variables
 # For the earliest version, define the word list here
 word_list=['computer', 'memory', 'disk space', 'monitor', 'video card']
 saved_guesses = []
+wrong_guesses = []
 
 #randomly choose a word from the list for the puzzle
 chosen_puzzle=random.choice(word_list)
@@ -58,26 +69,20 @@ for letter in chosen_puzzle:
 
 my_guess = input("Enter your guess: ")
 
-for num,letter in enumerate(chosen_puzzle, start=1):
-    matched = 0
-    if letter == my_guess:
-        saved_guesses[num] = my_guess
-        matched+=1
-    elif letter != my_guess and num == (len(chosen_puzzle)) and matched == 0:
-        print("Wrong guess") 
-
-
-#debug 10/8
-matched = 0
+#main guessing loop
+matched = 0                                          
 for num,letter in enumerate(chosen_puzzle, start=0):
-    print("Letter {}: {}".format(num, letter))
-    if letter == my_guess:
+    if check_dbl(my_guess,saved_guesses,wrong_guesses):
+        break
+#    print("Letter {}: {}".format(num, letter))
+    elif letter == my_guess:                        
         saved_guesses[num] = my_guess
-        matched+=1
-        print(matched)
+        matched+=1           
+                                                     
     elif letter != my_guess and num == (len(chosen_puzzle)-1) and matched == 0:
         print("Wrong guess")
-        print("You matched " + str(matched))
-        
+        wrong_guesses.append(letter)
+
+
 
 
