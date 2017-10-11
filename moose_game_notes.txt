@@ -291,3 +291,100 @@ while i < len(word):
 print("What does that spell?")
 for i in range(times):
   print (word, "!!!")
+
+---> Can replace:
+i = 0
+while i < len(word):
+  char = word[i]
+
+  with
+
+for char in word:
+
+This obviates:
+  i+=1
+
+since we're not using a while loop
+
+Strings and loops: 
+# not as pythonic
+s = "abcdefgh"
+for index in range(len(s)):
+  if s[index] == 'i' or s[index] == 'u'
+    print("There is an i or u")
+
+# More pythonic
+for char in s: 
+  if char == 'i' or char == 'u':
+    print("There is an i or u")
+
+Guess and check example code:
+cube = 8
+for guess in range(cube+1):
+  if guess**3 == cube:
+    print ("Cube root of", cube, "is", guess)
+
+More advanced version:
+cube = 8
+for guess in range(abs(cube+1)):
+  if guess**3 >= abs(cube)
+    break
+  if guess**3 != abs(cube):
+    print(cube, 'is not a perfect cube.')
+  else: 
+    if cube < 0:
+      guess = -guess
+    print ('Cube root of '+str (cube)+' is '+str(guess))
+
+
+10/9:
+
+Use array_equal to see if the puzzle in progress is equvalent to the answer
+
+from numpy import array_equal
+
+In [190]: tester=''.join(saved_guesses)
+
+In [191]: print(tester)
+video card
+
+In [192]: array_equal(tester,chosen_puzzle)
+Out[192]: True
+
+In [193]: array_equal('',join(saved_guesses),chosen_puzzle)
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-193-75deae87748c> in <module>()
+----> 1 array_equal('',join(saved_guesses),chosen_puzzle)
+
+NameError: name 'join' is not defined
+
+In [194]: array_equal(''.join(saved_guesses),chosen_puzzle)
+Out[194]: True
+
+In [195]: 
+
+old version of check to see if puzzle is finished: 
+
+In [122]: def check_fin(puz_in_prog,orig_puz):
+     ...:     """
+     ...:     Checks a puzzle in progress to see if it's finished
+     ...:     """
+     ...:     for letter in enumerate(puz_in_prog):
+     ...:         if not "_ " in letter and not " " in letter:
+     ...:             print("You have completed the puzzle!")
+     ...:             print(puz_in_prog)
+     ...:             print(orig_puz)
+     ...:             
+
+10/9
+
+ Enter a letter to guess the word puzzle
+ Enter 'quit' to end the program   > a
+Wrong guess
+You have made 1 wrong guesses.
+
+ Enter a letter to guess the word puzzle
+ Enter 'quit' to end the program   > m
+Just wrote a correct answer to Saved Guesses!
+You already guessed m!

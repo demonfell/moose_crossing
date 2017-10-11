@@ -22,9 +22,13 @@ def check_dbl(current_guess,puz_in_prog,bad_guesses):
     """
     if current_guess in puz_in_prog:
         print("You already guessed " + current_guess + "!")
+        print("From Saved guesses:\n")
+        print(saved_guesses) 
+
         return True
     if current_guess in bad_guesses:
-        print("You already guessed " + current_guess + "!") 
+        print("You already guessed " + current_guess + "!")
+        print("From wrong guesses:\n") 
         return True 
     else:
         return False
@@ -78,17 +82,25 @@ my_guess = ""
 while my_guess != 'quit':
     matched = 0  
     my_guess = (input(prompt)).lower()
-    print(saved_guesses)                                 
+    if check_dbl(my_guess,saved_guesses,wrong_guesses) and matched != 0:
+        break                                  
     for num,letter in enumerate(chosen_puzzle, start=0):
 #       print("Letter {}: {}".format(num, letter))
-        if check_dbl(my_guess,saved_guesses,wrong_guesses):
-            print(my_guess)
-            break  
+#        if check_dbl(my_guess,saved_guesses,wrong_guesses):
+#           break  
 
-        elif letter == my_guess:                        
+        if letter == my_guess:                        
             saved_guesses[num] = my_guess
-            matched+=1           
-                                                     
+            #Debugging line
+
+            print("Just wrote a correct answer to Saved Guesses!")
+            matched+=1
+            continue           
+        
+        elif my_guess == 'quit':
+            print("Goodbye! Thanks for playing.")
+            break
+
         elif letter != my_guess and num == (len(chosen_puzzle)-1) and matched == 0:
             print("Wrong guess")
             wrong_guesses.append(my_guess)
