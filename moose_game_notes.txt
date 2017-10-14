@@ -388,3 +388,23 @@ You have made 1 wrong guesses.
  Enter 'quit' to end the program   > m
 Just wrote a correct answer to Saved Guesses!
 You already guessed m!
+
+
+10/10: 
+ Enter a letter to guess the word puzzle
+ Enter 'quit' to end the program   > r
+You already guessed r!
+From Saved guesses:
+
+['m', 'o', '_ ', '_ ', '_ ', 'o', 'r']
+Just wrote a correct answer to Saved Guesses!
+
+# It matched both o's but told me I guessed R and registered it as a successful guess? 
+
+#human readable disply of the guesses: 
+
+ print(' '.join(saved_guesses))
+
+# Note: will need to put the random reneration inside a loop also, so that people can play again. 
+
+Need to implement the check_fin function. Should make a dictionary with the definitions of the terms to display at the end, and let the player choose to quit or start over.

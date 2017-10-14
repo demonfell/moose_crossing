@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 #import modules
 import random
@@ -14,12 +14,19 @@ def check_fin(puz_in_prog,orig_puz):
         print("You have completed the puzzle!")
         print(puz_in_prog)
         print(orig_puz)
+        return True
+    else:
+        return False
   
 
 def check_dbl(current_guess,puz_in_prog,bad_guesses):
     """
-    Checks to see if you already guessed a letter.
+    Checks to see if you already guessed a letter and if you're guessing more than 1 letter.
     """
+    if len(current_guess) > 1 and current_guess != "quit":
+        print("You may only guess 1 letter at a time, please.")
+        return True
+
     if current_guess in puz_in_prog:
         print("You already guessed " + current_guess + "!")
         print("From Saved guesses:\n")
@@ -41,27 +48,6 @@ wrong_guesses = []
 
 #randomly choose a word from the list for the puzzle
 chosen_puzzle=random.choice(word_list)
-
-#old
-#chosen_puzzle=random.choice(word_list)
-#while True:
-#   my_guess = raw_input ("Enter your guess: ")
-#   saved_guesses.append(my_guess)
-#   for i in chosen_puzzle:
-#       for j in saved_guesses:
-#           if j in i:
-#               print(i) , 
-#               break;
-#           else:
-#               print "_ " ,
-
-#Initialize the saved guesses array with placemarker underscores         
-#was not working, 10/7/2017
-#for ctr in range(len(chosen_puzzle)):
-#   if chosen_puzzle[ctr] != ' ':
-#       saved_guesses[ctr] = "_ "
-#   elif chosen_puzzle[ctr]  == ' ':
-#       saved_guesses[ctr] = " "
 
 #Initialize the saved guesses array with placemarker underscores        
 for letter in chosen_puzzle:
@@ -91,10 +77,8 @@ while my_guess != 'quit':
 
         if letter == my_guess:                        
             saved_guesses[num] = my_guess
-            #Debugging line
-
-            print("Just wrote a correct answer to Saved Guesses!")
             matched+=1
+            print(' '.join(saved_guesses))
             continue           
         
         elif my_guess == 'quit':
@@ -105,6 +89,12 @@ while my_guess != 'quit':
             print("Wrong guess")
             wrong_guesses.append(my_guess)
             print("You have made " + str(len(wrong_guesses)) + " wrong guesses.")
+            print(' '.join(saved_guesses))
+
+        elif num == (len(chosen_puzzle)-1) and check_fin(saved_guesses,chosen_puzzle):
+            print("Goodbye! Thanks for playing.")
+            break
+
 
 
 
