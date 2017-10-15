@@ -408,3 +408,18 @@ Just wrote a correct answer to Saved Guesses!
 # Note: will need to put the random reneration inside a loop also, so that people can play again. 
 
 Need to implement the check_fin function. Should make a dictionary with the definitions of the terms to display at the end, and let the player choose to quit or start over.
+
+
+10/13
+Made some good progress. Remining issues:
+1. Need to start implementing the "moose" steps for if you make wrong guesses.
+2. Need to make a main loop that includes generating a random puzzle
+3. Make the dictionary with the term definitions.
+4. If you guess 2 letters, gives warning but then says "wrong guess"
+
+10/14: 
+term_defs={"word":"a thing that means something","game":"a thing you play"}
+
+term_defs={"Processor":"The computing part of the computer. Also called the CPU (central processing unit),it is made up of the control unit and ALU (Arithmetic Logic Unit). Today, the CPUs of almost all computers are contained on a single microprocessor chip.","memory":"The computer's temporary workspace, a collection of dynamic RAM (DRAM) chips. A major resource in the computer, memory determines the size and number of programs that can be run at the same time, as well as the amount of data that can be processed instantly. All program execution and data processing takes place in memory.","monitor":"A display screen used to provide visual output from a computer. Computer monitors use CRT (cathode ray tube) and LCD (liquid crystal display) technology.", "display adapter":"A plug-in card in a desktop computer that performs graphics processing. Also commonly called a graphics card or video card, modern display adapters use the PCI Express interface, while earlier cards used PCI and AGP. The display adapter determines the maximum resolution, refresh rate and number of colors that can be displayed, which the monitor must also be able to support. On many PC motherboards, the graphics circuits are built into the chipset, and a separate plug-in card is not required.", "disk drive":"A storage device that holds, spins, reads and writes magnetic disks or optical discs." }
+
+['computer', 'memory', 'disk space', 'monitor', 'video card']
