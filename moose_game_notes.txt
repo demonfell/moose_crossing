@@ -430,3 +430,8 @@ Found 2 bugs:
 -To complete the puzzle you need to enter that second letter explicitly a second time.
 
 I would like to display the dictionary on multiple lines rather than 1 line.
+
+11/24: 
+Tested again and for "disk drive," did not need to enter "i" twice. 
+
+However, I did need to enter a space explicitly and after I finished the puzzle, it did not restart with a fresh puzzle.
