@@ -95,8 +95,3 @@ while my_guess != 'quit':
         elif num == (len(chosen_puzzle)-1) and check_fin(saved_guesses,chosen_puzzle,term_defs):
             print("Goodbye! Thanks for playing.")
             break
-
-
-
-
-
