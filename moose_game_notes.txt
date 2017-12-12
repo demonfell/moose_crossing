@@ -435,3 +435,15 @@ I would like to display the dictionary on multiple lines rather than 1 line.
 Tested again and for "disk drive," did not need to enter "i" twice. 
 
 However, I did need to enter a space explicitly and after I finished the puzzle, it did not restart with a fresh puzzle.
+
+12/12 
+When guessed "a" showed me multiple lines: 
+ Enter a letter to guess the word puzzle
+ Enter 'quit' to end the program   > a
+_  i _  _  _  a _    _  _  _  _  t _  r
+_  i _  _  _  a _    a _  _  _  t _  r
+_  i _  _  _  a _    a _  a _  t _  r
+
+ Enter a letter to guess the word puzzle
+ Enter 'quit' to end the program   > e
+_  i _  _  _  a _    a _  a _  t e r
